@@ -1,0 +1,17 @@
+Step 1: Set Up Your Java Project in Eclipse
+Open Eclipse and create a new Java project:
+
+Go to File > New > Java Project.
+Name your project, e.g., TestRunAPIProject, and click Finish.
+Create a new Java class:
+
+Right-click on the src folder > New > Class.
+Name the class, e.g., TestRunHandler, and check public static void main(String[] args).
+Click Finish.
+Add External Libraries:
+
+Right-click on your project > Build Path > Configure Build Path.
+Go to Libraries > Add External JARs.
+Add the required libraries:
+Apache Commons CSV for handling CSV files: Download Apache Commons CSV.
+Gson for JSON parsing: Download Gson.

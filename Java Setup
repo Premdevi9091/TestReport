@@ -1,0 +1,32 @@
+Step 1: Set Up Your Java Project in Eclipse
+Create a new Java project:
+
+Open Eclipse.
+Go to File > New > Java Project.
+Name your project, e.g., JiraAPICallProject, and click Finish.
+Create a new Java class:
+
+Right-click on the src folder > New > Class.
+Name the class JiraAPIHandler and include the public static void main(String[] args) method.
+Click Finish.
+Add Required Libraries:
+
+Right-click on your project > Build Path > Configure Build Path.
+Go to Libraries > Add External JARs.
+Add the following libraries:
+Apache Commons CSV for handling CSV files.
+Gson for JSON parsing.
+
+
+Key Points in the Code
+Bearer Token Authentication: The Bearer token is set in the Authorization header for both API calls.
+CSV Handling: Apache Commons CSV is used for reading the input CSV and writing the output CSV.
+JSON Parsing: Gson is used to parse JSON responses and extract needed information.
+Error Handling: Basic error handling is implemented to manage response codes and connection issues.
+
+How to Run the Project
+Set your Jira Base URL: Replace your_base_url_here with your Jira instance's URL.
+Set your Bearer Token: Replace your_bearer_token_here with your actual Bearer token for Jira authentication.
+Input CSV File: Ensure input.csv is available in the project directory or adjust the path in the code.
+Run the Project: Right-click on the JiraAPIHandler.java file > Run As > Java Application.
+

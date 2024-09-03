@@ -1,0 +1,44 @@
+Here's a shell script that will read values from a CSV file, make authenticated API calls to Jira using a Bearer token, process the responses to extract test case statistics, and generate a new CSV file with the results.
+
+### Step 1: Prepare Your Environment
+
+Ensure you have `curl` and `jq` installed on your system, as they will be used for making API calls and parsing JSON responses, respectively. You can install `jq` using the following commands:
+
+- **On Ubuntu/Debian**: `sudo apt-get install jq`
+- **On macOS**: `brew install jq`
+
+### Explanation of the Script
+
+1. **Variables**:
+   - `BASE_URL`: Your Jira base URL.
+   - `BEARER_TOKEN`: Your Jira Bearer token for authentication.
+   - `INPUT_CSV`: Path to the input CSV file containing `key1` and `key2`.
+   - `OUTPUT_CSV`: Path to the output CSV file where the results will be saved.
+
+2. **CSV Handling**:
+   - The script reads each line from the `input.csv`, skipping the header.
+   - For each line, it makes an API call to retrieve the `testExcId`.
+
+3. **API Calls**:
+   - The first API call retrieves the `testExcId` using `key1` and `key2`.
+   - The second API call retrieves the test case stats using the `testExcId`.
+
+4. **Parsing the JSON Response**:
+   - `jq` is used to parse the JSON response and extract the counts for each status.
+
+5. **Output**:
+   - The results are written to the `output.csv` with headers: `key1, key2, testExcId, Total, Pass, Fail, Executing, NotRun`.
+
+### Step 3: Run the Script
+
+1. **Make the script executable**:
+   ```bash
+   chmod +x jira_api_script.sh
+   ```
+
+2. **Run the script**:
+   ```bash
+   ./jira_api_script.sh
+   ```
+
+Ensure you replace `your_base_url_here` and `your_bearer_token_here` with the correct Jira base URL and Bearer token, respectively. The script will generate the output CSV file with the required data. Let me know if you need further assistance!

@@ -15,7 +15,7 @@ public class CreateDic_File {
 		String userHome = System.getProperty("user.dir");
 		System.out.println(userHome);
 		String dirName = userHome + File.separator + "Execution Reports";
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+		//DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
 		
 		String fileName = dirName + File.separator + "Jira_Execution_"+LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy"))+".csv";
 		System.out.println(dirName+"\n"+fileName);
